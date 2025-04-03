@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="assets/css/contacto.css">
 </head>
 <body>
-    <h1>Contacto</h1>
+
     
-    <form action="#" method="post">
+    <h1 style="text-align: center;">Contacto</h1>
+    
+    <form onsubmit="enviarFormulario(event)">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
         
@@ -22,9 +24,24 @@
         <button type="submit">Enviar</button>
     </form>
 
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); // Evita que la página se recargue
+
+            // Obtener los valores de los inputs
+            var nombre = document.getElementById("nombre").value;
+            var email = document.getElementById("email").value;
+            var mensaje = document.getElementById("mensaje").value;
+
+            // Mostrar la alerta con los datos ingresados
+            alert("Nombre: " + nombre + "\nEmail: " + email + "\nMensaje: " + mensaje);
+        }
+    </script>
     <nav>
-        <a href="index.html">Inicio</a> |
-        <a href="museos.html">Museos</a>
+        <a href="index.html">Inicio</a> | 
+        <a href="contacto.html">Contacto</a>
     </nav>
+
+    
 </body>
 </html>
